@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+    font-size: 100%;
+}
+
+:root {
+    /* Colors */
+    --cPrimary-cyan: hsl(179, 62%, 43%);
+    --cPrimary-lightBlue:hsl(179, 47%, 52%);
+    --cPrimary-yellow: hsl(71, 73%, 54%);
+    --cNeutral-white: hsl(204, 43%, 93%);
+    --cNeutral-grey: hsl(218, 22%, 67%);
+
+    /* Font weights */
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    /* Font sizes (major third) */
+    --fs-0: 0.8rem;
+    --fs-1: 1.000rem;
+    --fs-2: 1.563rem;
+    --fs-3: 1.953rem;
+
+    --fsm-1: 0.85rem;
+    --fsm-2: 1rem;
+    --fsm-3: 1.250rem;
+}
+
+
+
+/*  MOBILE & GENERAL STYLING  */
+body, html { height: 100%; background: var(--cNeutral-white); }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(0px 10px 10px hsla(0, 100%, 0%, 0.1));
+    border-radius: 10px;
+    width: 310px;
+}
+
+main > * {
+    width: 100%;
+    padding: 25px;
+}
+
+
+h1,h2,h3,p {
+    margin-bottom: 20px;
+} header p { margin-bottom: 0 }
+
+
+.header-card {
+    background: white;
+}
+
+.subscription-card {
+    background: var(--cPrimary-cyan);
+} .signup-button {
+    background: var(--cPrimary-yellow);
+    filter: drop-shadow(0px 5px 5px hsla(0, 100%, 0%, 0.1));
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px 0;
+}
+
+.whyus-card {
+    background: var(--cPrimary-lightBlue);
+}
+/*///////////////////////////////////////////////////*/
+
+
+
+/*  TYPOGRAPHY  */
+h1 {
+    font-size: var(--fsm-3);
+    color: var(--cPrimary-cyan);
+}
+
+header h2 {
+    color: var(--cPrimary-yellow);
+}
+
+header p {
+    color: var(--cNeutral-grey);
+    line-height: var(--fs-2);
+}
+
+
+h2, .signup-button {
+    color: white;
+    font-size: var(--fsm-2);
+}
+
+.signup-button {
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.03rem;
+}
+
+.price-text { /* "$29" */
+    font-size: var(--fs-3)!important;
+    color: white;
+    font-weight: var(--fw-bold);
+
+}
+
+h3 { /* "per month" */
+    color: var(--cNeutral-white);
+    font-size: var(--fs-1);
+    font-weight: var(--fw-regular);
+}
+
+p {
+    color: var(--cNeutral-white);
+    font-size: var(--fsm-1);
+}
+
+li {
+    color: var(--cNeutral-white);
+    font-size: var(--fs-0);
+    letter-spacing: 0.02rem;
+    list-style: none;
+    line-height: 1.25rem;
+}
+/*///////////////////////////////////////////////////*/
+
+
+
+@media (min-width: 700px) {
+    main {
+        display: grid;
+        width: 620px;
+        padding: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 0px;
+    }
+
+    .header-card {
+        max-width: 620px;
+        grid-column: 1 / span 2;
+    }
+
+    .whyus-card {
+        grid-column: 1 1;
+    }
+
+
+
+    h1 { font-size: var(--fs-3); }
+    h2, .signup-button { font-size: var(--fs-1); }
+    .price-text { font-size: var(--fs-3)!important; } /* "$29" */
+    h3 { font-size: var(--fs-1); } /* "per month" */
+    p { font-size: var(--fs-1); }
+    li { font-size: var(--fs-0); }
+}
